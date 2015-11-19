@@ -4,7 +4,8 @@
     "description": "Neos CMS filepreviews.io integration to generate thumbnail and extract metadata",
     "require": {
         "typo3/flow": "*",
-        "typo3/media": "*"
+        "typo3/media": "*",
+        "guzzle/guzzle": "~3.9"
     },
     "autoload": {
         "psr-4": {
