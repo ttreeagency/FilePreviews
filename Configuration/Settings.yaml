@@ -6,6 +6,7 @@ TYPO3:
         apiKey: 'api-key'
         apiSecret: 'api-secret'
         maximumWaitingTime: 30
+        maximumFileSize: 2000000
         defaultOptions:
           format: 'jpg'
         retryInterval: 1

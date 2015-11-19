@@ -51,6 +51,11 @@ class FilePreviewsThumbnailGenerator extends AbstractThumbnailGenerator
     public function refresh(Thumbnail $thumbnail)
     {
         try {
+            $maximumFileSize = (integer)$this->getOption('maximumFileSize');
+            if ($thumbnail->getOriginalAsset()->getResource()->getFileSize() > $maximumFileSize) {
+                return;
+            }
+
             $fp = new ApiClient([
                 'api_key' => $this->getOption('apiKey'),
                 'api_secret' => $this->getOption('apiSecret')
