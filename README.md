@@ -48,7 +48,7 @@ We try our best to craft this package with a lots of love, we are open to sponso
 License
 -------
 
-The MIT License (MIT). Please see [LICENSE](LICENSE) for more information.
+The MIT License (MIT). Please see [LICENSE](LICENSE.txt) for more information.
 
 [PSR-2]: http://www.php-fig.org/psr/psr-2/
 [PSR-4]: http://www.php-fig.org/psr/psr-4/
