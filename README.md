@@ -7,6 +7,29 @@ based on the API of [filepreviews.io].
 
 This package is Composer ready, [PSR-2] and [PSR-4] compliant.
 
+Configuration
+-------------
+
+Like any other Thumbnail Generator, you can change default settings. First step, you need to configure your API keys.
+
+```yaml
+TYPO3:
+  Media:
+    thumbnailGenerator:
+
+      'Ttree\FilePreviews\Domain\Model\ThumbnailGenerator\FilePreviewsThumbnailGenerator':
+        apiKey: 'api-key'
+        apiSecret: 'api-secret'
+        maximumWaitingTime: 30
+        defaultOptions:
+          format: 'jpg'
+        retryInterval: 1
+        supportedExtensions: [ 'doc', 'docx', 'txt', 'rtf', 'ogg' ]
+```
+
+- ```supportedExtensions```: check the official documentation of FilePreviews [Supported Formats] and enjoy. 
+- ```defaultOptions```: check the [API endpoint] documentation.
+
 Acknowledgments
 ---------------
 
@@ -22,3 +45,5 @@ The MIT License (MIT). Please see [LICENSE](LICENSE) for more information.
 [PSR-2]: http://www.php-fig.org/psr/psr-2/
 [PSR-4]: http://www.php-fig.org/psr/psr-4/
 [filepreviews.io]: http://filepreviews.io/
+[Supported Formats]: http://filepreviews.io/docs/features.html
+[API endpoint]: http://filepreviews.io/docs/endpoints.html
