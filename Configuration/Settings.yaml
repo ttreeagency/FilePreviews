@@ -9,4 +9,4 @@ TYPO3:
         defaultOptions:
           format: 'jpg'
         retryInterval: 1
-        supportedExtensions: [ 'doc', 'docx' ]
+        supportedExtensions: [ 'doc', 'docx', 'txt', 'rtf' ]
