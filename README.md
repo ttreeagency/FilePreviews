@@ -7,6 +7,14 @@ based on the API of [filepreviews.io].
 
 This package is Composer ready, [PSR-2] and [PSR-4] compliant.
 
+How it work ?
+-------------
+
+This Generator call the FilePreviews.io API to generate Thumbnail for dozen of differents file format. Check [filepreviews.io]
+website for more informations.
+
+![Thumbnail from an OGG Vorbis File](https://dl.dropboxusercontent.com/s/775z6n54b4goyc6/2015-11-19%20at%2012.40.png)
+
 Configuration
 -------------
 
