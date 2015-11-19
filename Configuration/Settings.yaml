@@ -1,0 +1,8 @@
+TYPO3:
+  Media:
+    thumbnailGenerator:
+
+      'Ttree\FilePreviews\Domain\Model\ThumbnailGenerator\FilePreviewsThumbnailGenerator':
+        apiKey: 'api-key'
+        apiSecret: 'api-secret'
+        supportedExtensions: [ 'doc', 'docx' ]

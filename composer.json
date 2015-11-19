@@ -1,0 +1,15 @@
+{
+    "name": "ttree/filepreviews",
+    "type": "typo3-flow-package",
+    "description": "Neos CMS filepreviews.io integration to generate thumbnail and extract metadata",
+    "require": {
+        "typo3/flow": "*",
+        "typo3/media": "*",
+        "filepreviews/filepreviews": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ttree\\FilePreviews\\": "Classes"
+        }
+    }
+}
