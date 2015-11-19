@@ -16,6 +16,7 @@ use Ttree\FilePreviews\Service\FilePreviewsService;
 use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 use TYPO3\Flow\Resource\ResourceManager;
+use TYPO3\Flow\Utility\Arrays;
 use TYPO3\Media\Domain\Model\Thumbnail;
 use TYPO3\Media\Domain\Model\ThumbnailGenerator\AbstractThumbnailGenerator;
 use TYPO3\Media\Exception;
@@ -60,13 +61,13 @@ class FilePreviewsThumbnailGenerator extends AbstractThumbnailGenerator
             $width = $thumbnail->getConfigurationValue('width') ?: $thumbnail->getConfigurationValue('maximumWidth');
             $height = $thumbnail->getConfigurationValue('height') ?: $thumbnail->getConfigurationValue('maximumHeight');
 
-            $response = $fp->generate($uri, [
+            $response = $fp->generate($uri, Arrays::arrayMergeRecursiveOverrule([
                 'sizes' => [$width, $height],
                 'format' => 'jpg',
                 'data' => [
                     'original' => $thumbnail->getOriginalAsset()->getResource()->getSha1()
                 ]
-            ]);
+            ], $this->getOption('defaultOptions')));
             $responseIdentifier = $response->id;
 
             $success = false;

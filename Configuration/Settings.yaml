@@ -6,5 +6,7 @@ TYPO3:
         apiKey: 'api-key'
         apiSecret: 'api-secret'
         maximumWaitingTime: 30
+        defaultOptions:
+          format: 'jpg'
         retryInterval: 1
         supportedExtensions: [ 'doc', 'docx' ]
