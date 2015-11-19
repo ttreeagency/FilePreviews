@@ -11,7 +11,8 @@ namespace Ttree\FilePreviews\Domain\Model\ThumbnailGenerator;
  * source code.
  */
 
-use FilePreviews\FilePreviews;
+use Ttree\FilePreviews\Service\ApiClient;
+use Ttree\FilePreviews\Service\FilePreviewsService;
 use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 use TYPO3\Flow\Resource\ResourceManager;
@@ -25,8 +26,8 @@ use TYPO3\Media\Exception;
 class FilePreviewsThumbnailGenerator extends AbstractThumbnailGenerator
 {
     /**
-     * @Flow\Inject
      * @var ResourceManager
+     * @Flow\Inject
      */
     protected $resourceManager;
 
@@ -49,7 +50,7 @@ class FilePreviewsThumbnailGenerator extends AbstractThumbnailGenerator
     public function refresh(Thumbnail $thumbnail)
     {
         try {
-            $fp = new FilePreviews([
+            $fp = new ApiClient([
                 'api_key' => $this->getOption('apiKey'),
                 'api_secret' => $this->getOption('apiSecret')
             ]);
@@ -69,19 +70,21 @@ class FilePreviewsThumbnailGenerator extends AbstractThumbnailGenerator
             $responseIdentifier = $response->id;
 
             $success = false;
-            $count = 0;
+            $elapsedTime = 0;
+            $maximumWaitingTime = (integer)$this->getOption('maximumWaitingTime');
+            $retryInterval = (integer)$this->getOption('retryInterval');
             while ($success === false) {
-                if ($count >= 10) {
+                if ($elapsedTime >= $maximumWaitingTime) {
                     break;
                 }
                 $response = $fp->retrieve($responseIdentifier);
                 $success = $response->status === 'success';
-                sleep(1);
-                ++$count;
+                sleep($retryInterval);
+                $elapsedTime = $elapsedTime + $retryInterval;
             }
 
             if ($success === false || !isset($response->thumbnails[0])) {
-                throw new Exception('Unable to process the thumbnail is less than 10 seconds, sorry', 1447891433);
+                throw new Exception('Unable to process the thumbnail is less than 20 seconds, sorry', 1447891433);
             }
 
             $url = $response->thumbnails[0]->url;

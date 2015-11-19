@@ -5,4 +5,6 @@ TYPO3:
       'Ttree\FilePreviews\Domain\Model\ThumbnailGenerator\FilePreviewsThumbnailGenerator':
         apiKey: 'api-key'
         apiSecret: 'api-secret'
+        maximumWaitingTime: 30
+        retryInterval: 1
         supportedExtensions: [ 'doc', 'docx' ]
