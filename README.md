@@ -1,19 +1,15 @@
-# Neos CMS filepreviews.io integration 
+# Neos CMS filepreviews.io integration
 
-This package generate thumbnail and extract metadata from different type of document 
+This package generate thumbnail and extract metadata from different type of document
 based on the API of [filepreviews.io].
-
-**This package is under development and depends on change not currently available in a stable version of Neos**
 
 This package is Composer ready, [PSR-2] and [PSR-4] compliant.
 
 How it work ?
 -------------
 
-This Generator call the FilePreviews.io API to generate Thumbnail for dozen of differents file format. Check [filepreviews.io]
+This Generator call the FilePreviews.io API to generate Thumbnail for many different file formats. Check [filepreviews.io]
 website for more informations.
-
-![Thumbnail from an OGG Vorbis File](https://dl.dropboxusercontent.com/s/775z6n54b4goyc6/2015-11-19%20at%2012.40.png)
 
 Configuration
 -------------
@@ -21,7 +17,7 @@ Configuration
 Like any other Thumbnail Generator, you can change default settings. First step, you need to configure your API keys.
 
 ```yaml
-TYPO3:
+Neos:
   Media:
     thumbnailGenerator:
 
@@ -32,10 +28,10 @@ TYPO3:
         defaultOptions:
           format: 'jpg'
         retryInterval: 1
-        supportedExtensions: [ 'doc', 'docx', 'txt', 'rtf', 'ogg' ]
+        supportedExtensions: [ 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlxs', 'odt', 'ott', 'odp', 'txt', 'rtf', 'eps' ]
 ```
 
-- ```supportedExtensions```: check the official documentation of FilePreviews [Supported Formats] and enjoy. 
+- ```supportedExtensions```: check the official documentation of FilePreviews [Supported Formats] and enjoy.
 - ```defaultOptions```: check the [API endpoint] documentation.
 
 Acknowledgments
@@ -53,5 +49,5 @@ The MIT License (MIT). Please see [LICENSE](LICENSE.txt) for more information.
 [PSR-2]: http://www.php-fig.org/psr/psr-2/
 [PSR-4]: http://www.php-fig.org/psr/psr-4/
 [filepreviews.io]: http://filepreviews.io/
-[Supported Formats]: http://filepreviews.io/docs/features.html
-[API endpoint]: http://filepreviews.io/docs/endpoints.html
+[Supported Formats]: https://filepreviews.io/docs/features/
+[API endpoint]: https://filepreviews.io/docs/endpoints/

@@ -1,11 +1,11 @@
 {
     "name": "ttree/filepreviews",
-    "type": "typo3-flow-package",
+    "type": "neos-package",
     "license": "MIT",
     "description": "Neos CMS filepreviews.io integration to generate thumbnail and extract metadata",
     "require": {
-        "typo3/flow": "*",
-        "typo3/media": "*",
+        "neos/flow": ">4.0",
+        "neos/media": ">3.0",
         "guzzle/guzzle": "~3.9"
     },
     "autoload": {
