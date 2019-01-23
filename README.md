@@ -28,7 +28,7 @@ Neos:
         defaultOptions:
           format: 'jpg'
         retryInterval: 1
-        supportedExtensions: [ 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlxs', 'odt', 'ott', 'odp', 'txt', 'rtf', 'eps' ]
+        supportedExtensions: [ 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlxs', 'odt', 'ott', 'odp', 'txt', 'rtf', 'eps', 'psd', 'ai' ]
 ```
 
 - ```supportedExtensions```: check the official documentation of FilePreviews [Supported Formats] and enjoy.
