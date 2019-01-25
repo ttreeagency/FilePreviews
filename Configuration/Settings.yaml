@@ -1,7 +1,6 @@
-TYPO3:
+Neos:
   Media:
-    thumbnailGenerator:
-
+    thumbnailGenerators:
       'Ttree\FilePreviews\Domain\Model\ThumbnailGenerator\FilePreviewsThumbnailGenerator':
         apiKey: 'api-key'
         apiSecret: 'api-secret'
@@ -10,4 +9,4 @@ TYPO3:
         defaultOptions:
           format: 'jpg'
         retryInterval: 1
-        supportedExtensions: [ 'doc', 'docx', 'txt', 'rtf', 'ogg' ]
+        supportedExtensions: [ 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlxs', 'odt', 'ott', 'odp', 'txt', 'rtf', 'eps', 'psd', 'ai' ]

@@ -4,7 +4,7 @@ namespace Ttree\FilePreviews\Service;
 /*
  * This file is part of the Ttree.FilePreviews package.
  *
- * (c) ttree ltd - www.neos.io
+ * (c) ttree ltd - www.ttree.ch
  *
  * This package is Open Source Software. For the full copyright and license
  * information, please view the LICENSE file which was distributed with this
@@ -12,8 +12,6 @@ namespace Ttree\FilePreviews\Service;
  */
 
 use Guzzle\Http\Client as GuzzleClient;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Media\Exception;
 
 /**
  * File Previews Client Service

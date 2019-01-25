@@ -4,7 +4,7 @@ namespace Ttree\FilePreviews\Domain\Model\ThumbnailGenerator;
 /*
  * This file is part of the Ttree.FilePreviews package.
  *
- * (c) ttree ltd - www.neos.io
+ * (c) ttree ltd - www.ttree.ch
  *
  * This package is Open Source Software. For the full copyright and license
  * information, please view the LICENSE file which was distributed with this
@@ -13,16 +13,16 @@ namespace Ttree\FilePreviews\Domain\Model\ThumbnailGenerator;
 
 use Ttree\FilePreviews\Service\ApiClient;
 use Ttree\FilePreviews\Service\FilePreviewsService;
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
-use TYPO3\Flow\Resource\ResourceManager;
-use TYPO3\Flow\Utility\Arrays;
-use TYPO3\Media\Domain\Model\Thumbnail;
-use TYPO3\Media\Domain\Model\ThumbnailGenerator\AbstractThumbnailGenerator;
-use TYPO3\Media\Exception;
+use Neos\Flow\ResourceManagement\ResourceManager;
+use Neos\Utility\Arrays;
+use Neos\Media\Domain\Model\Thumbnail;
+use Neos\Media\Domain\Model\ThumbnailGenerator\AbstractThumbnailGenerator;
+use Neos\Media\Exception;
 
 /**
- * A system-generated preview version of a Document (PDF, AI and EPS)
+ * A system-generated preview version of a Document (DOCX, AI and EPS)
  */
 class FilePreviewsThumbnailGenerator extends AbstractThumbnailGenerator
 {
@@ -38,9 +38,7 @@ class FilePreviewsThumbnailGenerator extends AbstractThumbnailGenerator
      */
     public function canRefresh(Thumbnail $thumbnail)
     {
-        return (
-        $this->isExtensionSupported($thumbnail)
-        );
+        return $this->isExtensionSupported($thumbnail);
     }
 
     /**
